@@ -33,7 +33,7 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     padding: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -47,7 +47,7 @@ body::before {
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     letter-spacing: -0.02em;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .info-bar {
@@ -55,7 +55,7 @@ body::before {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 1.5rem; */
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
@@ -102,6 +102,52 @@ body::before {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+.play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.play-button-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.play-triangle {
+    width: 0;
+    height: 0;
+    border-left: 24px solid #333;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    margin-left: 4px;
+}
+
 .video-container iframe,
 .video-container video {
     position: absolute;
@@ -123,19 +169,19 @@ body::before {
 
 @media (max-width: 768px) {
     .presentation-wrapper {
-        gap: 1.5rem;
+        gap: 0.5rem;
         padding: 1rem;
     }
     
     .main-title {
         font-size: clamp(1.5rem, 5vw, 2.5rem);
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.3rem;
     }
     
     .info-bar {
         font-size: clamp(0.8rem, 2vw, 1rem);
         gap: 0.75rem;
-        margin-bottom: 1.5rem;
+        /* margin-bottom: 1rem; */
         flex-wrap: wrap;
     }
     

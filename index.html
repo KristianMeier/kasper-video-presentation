@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasper Video Presentation</title>
+    <title>Business Analyst</title>
+    <link rel="icon" type="image/png" href="favicon2.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -31,12 +32,43 @@
             </a>
         </div>
         <div class="video-container">
-            <video controls poster="Thumbnail.png" preload="metadata">
+            <video controls poster="Thumbnail.png" preload="metadata" id="mainVideo">
                 <source src="finalvideo.webm" type="video/webm">
                 Your browser does not support the video tag.
             </video>
+            <div class="play-button-overlay" id="playOverlay">
+                <div class="play-button">
+                    <div class="play-triangle"></div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('mainVideo');
+            const playOverlay = document.getElementById('playOverlay');
+
+            // Hide overlay when video starts playing
+            video.addEventListener('play', function () {
+                playOverlay.classList.add('hidden');
+            });
+
+            // Show overlay when video is paused or ended
+            video.addEventListener('pause', function () {
+                playOverlay.classList.remove('hidden');
+            });
+
+            video.addEventListener('ended', function () {
+                playOverlay.classList.remove('hidden');
+            });
+
+            // Click overlay to play video
+            playOverlay.addEventListener('click', function () {
+                video.play();
+            });
+        });
+    </script>
 </body>
 
 </html>
