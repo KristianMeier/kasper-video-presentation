@@ -6,6 +6,9 @@
     /* Backgrounds */
     --color-background: #fafafa;
     --color-surface: #ffffff;
+
+    /* Max width */
+    --max-width: 900px;
 }
 
 * {
@@ -40,7 +43,7 @@ body {
     gap: 0.5rem;
     padding: 2rem;
     width: 100%;
-    max-width: 1080px;
+    max-width: var(--max-width);
 }
 
 .main-title {
@@ -105,7 +108,7 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 1080px;
+    max-width: var(--max-width);
     aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: #000;
@@ -136,8 +139,8 @@ body {
 }
 
 .play-button {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     display: flex;
@@ -154,10 +157,10 @@ body {
 .play-triangle {
     width: 0;
     height: 0;
-    border-left: 24px solid #333;
-    border-top: 16px solid transparent;
-    border-bottom: 16px solid transparent;
-    margin-left: 4px;
+    border-left: 18px solid #333;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 3px;
 }
 
 .video-container iframe,
@@ -204,14 +207,14 @@ body {
     }
     
     .play-button {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
     
     .play-triangle {
-        border-left: 12px solid #333;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
+        border-left: 9px solid #333;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
         margin-left: 2px;
     }
     
