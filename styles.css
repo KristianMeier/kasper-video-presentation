@@ -91,6 +91,16 @@ body {
     vertical-align: middle;
 }
 
+.video-caption {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 1rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    max-width: 900px;
+}
+
 .video-container {
     position: relative;
     width: 100%;
