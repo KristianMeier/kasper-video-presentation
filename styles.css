@@ -40,8 +40,7 @@ body {
     gap: 0.5rem;
     padding: 2rem;
     width: 100%;
-    max-width: 1200px;
-    max-height: 90vh;
+    max-width: 1080px;
 }
 
 .main-title {
@@ -89,6 +88,8 @@ body {
 
 .inline-link svg {
     vertical-align: middle;
+    width: 16px;
+    height: 16px;
 }
 
 .video-caption {
@@ -104,9 +105,8 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 900px;
-    max-height: calc(90vh - 8rem);
-    aspect-ratio: 16 / 9;
+    max-width: 1080px;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: #000;
     border-radius: 12px;
@@ -168,12 +168,12 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
-@supports not (aspect-ratio: 16 / 9) {
+@supports not (aspect-ratio: 16 / 10) {
     .video-container {
-        padding-bottom: 56.25%;
+        padding-bottom: 62.5%;
         height: 0;
         max-height: none;
     }
@@ -199,8 +199,20 @@ body {
     }
     
     .inline-link svg {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .play-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .play-triangle {
+        border-left: 12px solid #333;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        margin-left: 2px;
     }
     
     .video-container {
