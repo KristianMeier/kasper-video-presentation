@@ -1,3 +1,13 @@
+:root {
+    /* Text colors */
+    --color-text-main: #333333;
+    --color-text-secondary: #555555;
+
+    /* Backgrounds */
+    --color-background: #fafafa;
+    --color-surface: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +16,12 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: var(--color-background);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     position: relative;
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 0;
 }
 
 .presentation-wrapper {
@@ -41,11 +38,10 @@ body::before {
 }
 
 .main-title {
-    color: #ffffff;
+    color: var(--color-text-main);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 600;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     letter-spacing: -0.02em;
     margin: 0 0 0.5rem 0;
 }
@@ -60,29 +56,27 @@ body::before {
 }
 
 .info-bar .name {
-    color: #ffffff;
+    color: var(--color-text-secondary);
     font-weight: 400;
-    opacity: 0.9;
 }
 
 .divider {
-    color: #ffffff;
-    opacity: 0.5;
+    color: var(--color-text-secondary);
+    opacity: 0.4;
 }
 
 .inline-link {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    color: #ffffff;
+    color: var(--color-text-secondary);
     text-decoration: none;
     font-weight: 400;
     transition: all 0.3s ease;
-    opacity: 0.9;
 }
 
 .inline-link:hover {
-    opacity: 1;
+    color: var(--color-text-main);
     transform: translateY(-1px);
 }
 
@@ -99,7 +93,7 @@ body::before {
     overflow: hidden;
     background-color: #000;
     border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .play-button-overlay {
@@ -192,7 +186,7 @@ body::before {
     
     .video-container {
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
     
     .video-container iframe,
